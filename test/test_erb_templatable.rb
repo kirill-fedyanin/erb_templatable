@@ -5,17 +5,22 @@ class ErbTemplatableWrapper
   include ErbTemplatable
 
   def basic
-    erb_template("basic.html.erb")
+    erb_template("basic")
   end
 
   def inline
-    erb_template("inline.html.erb")
+    erb_template("inline")
   end
 
   def ivar(name)
     @name = name
-    erb_template("ivar.html.erb")
+    erb_template("ivar")
   end
+
+  def extension
+    erb_template("basic.html.erb")
+  end
+
 end
 
 class ErbTemplatableTest < Minitest::Test
@@ -36,5 +41,10 @@ class ErbTemplatableTest < Minitest::Test
   def test_ivar
     ivar = @wrapper.ivar("mephody-bro")
     assert_equal "Hello, mephody-bro!\n", ivar
+  end
+
+  def test_dont_mind_extension
+    with_extension = @wrapper.extension
+    assert_equal "Hello!\n", with_extension
   end
 end

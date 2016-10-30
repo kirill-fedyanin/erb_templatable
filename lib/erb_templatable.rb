@@ -4,11 +4,13 @@ module ErbTemplatable
     if dir_name.nil?
       dir_name = File.dirname caller[0].partition(":").first
     end
+
+    if file_name !~ /html\.erb$/
+      file_name += ".html.erb"
+    end
+
     template_file = File.read("#{dir_name}/#{subdir}#{file_name}")
     ERB.new(template_file).result bind
   end
 
-  def self.five
-    5
-  end
 end
