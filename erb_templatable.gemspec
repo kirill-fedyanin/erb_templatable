@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name            = 'erb_templatable'
-  s.version         = '0.0.1'
+  s.version         = '0.0.2'
   s.date            = '2016-10-30'
   s.summary         = 'easy wrap up around ERB'
   s.authors         = ['mephody-bro']
