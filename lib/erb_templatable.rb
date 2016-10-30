@@ -37,8 +37,8 @@ module ErbTemplatable
 private
 
   def erb_template_fix_filename(file_name)
-    if file_name !~ /html\.erb$/
-      if file_name =~ /xml$/
+    if file_name !~ /html\.erb$/ || file_name !~ /xml\.erb$/
+      if file_name =~ /xml$/ || file_name =~ /html$/
         file_name += ".erb"
       else
         file_name += ".html.erb"
