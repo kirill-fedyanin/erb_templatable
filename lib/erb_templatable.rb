@@ -1,6 +1,6 @@
 require "erb"
 module ErbTemplatable
-  def erb_template(file_name, dir_name=nil, subdir="template/", bind=binding)
+  def erb_template(file_name, dir_name=nil, subdir="templates/", bind=binding)
     if dir_name.nil?
       dir_name = File.dirname caller[0].partition(":").first
     end
