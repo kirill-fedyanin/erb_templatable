@@ -9,11 +9,16 @@ class BrandNewClass
 include ErbTemplatable
 
   # this method will render file
-  #   parent_dir/templates/mozzarella.html.erb
-  #   where parent_dir - the location of BrandNewClass
+  #   ./templates/mozzarella.html.erb   (relative from BrandNewClass/caller location)
   #   You can use any ivar from the current instance
   def want_the_template
     erb_template("mozzarella")
+  end
+  
+  # xml or html could be detected and .erb will be autocompleted
+  #  in this case `./templates/brie.xml.erb will be rendered
+  def want_xml_template
+    erb_template("brie.xml")
   end
 
   # this method will render file
