@@ -1,5 +1,27 @@
 require "erb"
 
+# Simple wrapper around ERB
+# Intended to simplify templates usage
+#  by establishing few conventions
+# Module should be included to make method available
+#
+# class BrandNewClass
+#   include ErbTemplatable
+#
+#   # this method will render file
+#   #   parent_dir/templates/mozzarella.html.erb
+#   #   where parent_dir - the location of BrandNewClass
+#   def want_the_template
+#     erb_template("mozzarella")
+#   end
+#
+#   # this method will render file
+#   #    app/models/sausages/cheeses/camembert.html.erb
+#   #    with no biding attached
+#   def explicit_template
+#     erb_template("camembert.html.erb", dir_name="app/models/sausages", "cheeses/", nil)
+#   end
+# end
 module ErbTemplatable
   def erb_template(file_name, dir_name=nil, subdir="templates/", bind=binding)
     if dir_name.nil?
