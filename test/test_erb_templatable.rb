@@ -21,6 +21,9 @@ class ErbTemplatableWrapper
     erb_template("basic.html.erb")
   end
 
+  def xml
+    erb_template("description.xml")
+  end
 end
 
 class ErbTemplatableTest < Minitest::Test
@@ -46,5 +49,10 @@ class ErbTemplatableTest < Minitest::Test
   def test_dont_mind_extension
     with_extension = @wrapper.extension
     assert_equal "Hello!\n", with_extension
+  end
+
+  def test_xml
+    xml = @wrapper.xml
+    assert_equal "<BroCodex><Page>42</Page></BroCodex>\n", xml
   end
 end
