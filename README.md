@@ -1,12 +1,12 @@
 # ErbTemplatable gem
 
-Simple wrapper around ERB
-Intended to simplify templates usage by establishing few conventions.
-Module should be included to make method available
+Simple wrapper around ERB intended to simplify template usage by few conventions usage.
+
+Module should be included to make method available.
 
 ```ruby
 class BrandNewClass
-include ErbTemplatable
+  include ErbTemplatable
 
   # this method will render file
   #   ./templates/mozzarella.html.erb   (relative from BrandNewClass/caller location)
