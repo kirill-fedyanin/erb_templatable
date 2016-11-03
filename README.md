@@ -2,6 +2,12 @@
 
 Simple wrapper around ERB intended to simplify template usage by few conventions usage.
 
+Include gem in your gemfile
+
+```ruby
+gem 'erb_templatable', "0.0.2"
+```
+
 Module should be included to make method available.
 
 ```ruby
